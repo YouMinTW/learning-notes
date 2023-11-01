@@ -43,3 +43,6 @@ echo Hello volume > test.html    # Create a "test.html" file
 docker run -d -it -v `pwd`:/usr/local/apache2/htdocs -p 8080:80 httpd  # Run an "httpd" container, bind-mounting the current directory to the container's "/usr/local/apache2/htdocs" directory and mapping container port 80 to host port 8080  
 curl http://localhost:8080/test.html  # View the contents of "test.html" within the container (you'll see "Hello volume" since it's bind-mounted)  
 ```
+
+# Reference 
+1. [30 天與鯨魚先生做好朋友 - Docker newbie](https://mileschou.me/ironman/12th/docker-newbie)
