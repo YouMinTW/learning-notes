@@ -1,5 +1,10 @@
 ## Memory
 
+* Data in memory is stored in bytes, which are composed of bits.
+* Bytes in memory can be used to reference other bytes, allowing for the storage of references to additional data.(pointer)
+* The amount of memory available on a machine is limited, so it is valuable to minimize the amount of memory used by an algorithm.
+* Accessing a byte or a fixed number of bytes (such as 4 bytes or 8 bytes for 32-bit and 64-bit integers) is considered a basic operation, roughly equivalent to a single unit of computational work.
+
 1. Bit: A bit is the basic unit of information in computing, representing a state with either a 0 or 1.
 2. Byte: A byte is a group of 8 bits. It can represent values from 0 to 255 in binary format.
 3. Fixed-Width Integer: It is an integer represented by a fixed number of bits, such as 32 bits (4 Bytes) or 64 bits (8 Bytes). The number is stored in binary format, with each byte separated by spaces.
