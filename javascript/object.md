@@ -56,5 +56,32 @@ describe('getDirtyFields', () => {
     const formValues = { field1: { subfield1: 'value1', subfield2: 'value2' }, field2: 'value3' };
     expect(getDirtyFields(dirtyFields, formValues)).toEqual({ field1: { subfield1: 'value1' }, field2: 'value3' });
   });
+
+  it('should handle arrays', () => {
+    const dirtyFields = {
+      field1: [
+        { subfield1: true, subfield2: false },
+        { subfield1: false, subfield2: false },
+        { subfield1: true, subfield2: true },
+      ],
+      field2: true,
+    };
+    const formValues = {
+      field1: [
+        { subfield1: 'field1[0]subfield1-new', subfield2: 'field1[0]subfield1-old' },
+        { subfield1: 'field1[1]subfield1-old', subfield2: 'field1[1]subfield1-old' },
+        { subfield1: 'field1[2]subfield1-new', subfield2: 'field1[2]subfield1-new' },
+      ],
+      field2: 'value4',
+    };
+    expect(getDirtyFields(dirtyFields, formValues)).toEqual({
+      field1: [
+        { subfield1: 'field1[0]subfield1-new' },
+        {},
+        { subfield1: 'field1[2]subfield1-new', subfield2: 'field1[2]subfield1-new' },
+      ],
+      field2: 'value4',
+    });
+  });
 });
 ```
