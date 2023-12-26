@@ -1,5 +1,6 @@
 ## Object comparison for dirty field from React-hook-form
 
+See issue: https://github.com/orgs/react-hook-form/discussions/9472#discussioncomment-4269526
 ```js
 function getDirtyFields(dirtyFields, formValues) {
   if (typeof dirtyFields !== 'object' || dirtyFields === null || !formValues) {
